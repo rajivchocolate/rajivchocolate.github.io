@@ -1,0 +1,7 @@
+- name: Threat Modeling
+  percentage: 85
+  color: secondary
+
+- name: Chess
+  percentage: 80
+  color: dark

@@ -1,0 +1,62 @@
+### Site Settings ###
+title               : rcwiz
+description         : >-
+                      Security Engineer. Chess enthusiast.
+baseurl             : ""
+repository          : rajivchocolate/rajivchocolate.github.io
+open_new_tab        : true
+
+### Plugins ###
+plugins:
+  - jemoji
+
+### Navbar Settings ###
+nav_exclude:
+  - pages/tags.html
+  - pages/404.html
+  - pages/index.md
+
+### Author Info ###
+author:
+  name              : rcwiz
+  image             : https://avatars.githubusercontent.com/u/rajivchocolate
+  github            : rajivchocolate
+  chess             : https://www.chess.com/member/rcwizard12
+
+### Posts ###
+permalink: /blog/:title
+
+### Collections ###
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name
+
+### Analytics - disabled for privacy ###
+analytics:
+  enabled: false
+
+### Buy me a coffee - disabled ###
+buymeacoffee:
+  enabled: false
+
+### Defaults for collections ###
+defaults:
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      comments: false
+
+### Exclude from processing ###
+exclude:
+  - README.md
+  - CONTRIBUTING.md
+  - LICENSE
+  - "*.log"
+  - docs
