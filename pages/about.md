@@ -9,7 +9,7 @@ weight: 3
 
 Hi, I'm **{{ site.author.name }}**.
 
-I'm a Security Engineer focused on building and breaking secure systems. My work involves vulnerability research, security architecture, and developing tools to help organizations defend against threats.
+I'm a Security Engineer specializing in application security, authentication, and authorization systems. I build security tooling and frameworks to help organizations prevent threats and protect their infrastructure.
 
 When I'm not working on security, you'll find me playing chess. Feel free to challenge me on [Chess.com](https://www.chess.com/member/rcwizard12).
 
