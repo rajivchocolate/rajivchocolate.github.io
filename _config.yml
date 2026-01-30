@@ -1,7 +1,7 @@
 ### Site Settings ###
 title               : rcwiz
 description         : >-
-                      Security Engineer. Chess enthusiast.
+                      Security Engineer building tools and systems that scale. Focused on application security, IAM, and developer experience.
 baseurl             : ""
 repository          : rajivchocolate/rajivchocolate.github.io
 open_new_tab        : true

@@ -1,15 +1,115 @@
-<div class="row justify-content-center align-items-center p-4">
-  <div class="col-lg-4 col-md-6 text-center mt-4">
+<!-- Hero Section -->
+<div class="row justify-content-center align-items-center py-5">
+  <div class="col-lg-10 col-md-11">
+    <div class="row align-items-center">
 
-    <!-- Fine Circle Responsive Image -->
-    <div id="container" class="my-2">
-      <div id="dummy"></div>
-      <div id="element">
-        <img src="{{ site.author.image }}" alt="{{ site.title }}" class="circle-image wow animated zoomIn" data-wow-delay=".1s">
+      <!-- Profile Image -->
+      <div class="col-lg-4 col-md-5 text-center mb-4 mb-md-0">
+        <div id="container" class="my-2">
+          <div id="dummy"></div>
+          <div id="element">
+            <img src="{{ site.author.image }}" alt="{{ site.title }}" class="circle-image wow animated zoomIn" data-wow-delay=".1s" style="border: 3px solid #667eea;">
+          </div>
+        </div>
+        <div class="mt-3 wow animated fadeIn" data-wow-delay=".2s">
+          <a href="https://github.com/{{ site.author.github }}" class="btn btn-sm btn-dark mr-1" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+          <a href="{{ site.author.chess }}" class="btn btn-sm btn-success" target="_blank"><i class="fas fa-chess"></i> Chess</a>
+        </div>
+      </div>
+
+      <!-- Introduction -->
+      <div class="col-lg-8 col-md-7">
+        <p class="text-uppercase text-muted small mb-1 wow animated fadeIn" data-wow-delay=".1s" style="letter-spacing: 2px;">Security Engineer</p>
+        <h1 class="display-4 font-weight-bold wow animated fadeIn" data-wow-delay=".15s">Hi, I'm Rajiv</h1>
+        <p class="lead wow animated slideInUp" data-wow-delay=".2s" style="color: #4a5568;">
+          I build security tools and systems that scale. My focus is on making security invisible so teams can ship fast without compromising on safety.
+        </p>
+        <p class="wow animated slideInUp" data-wow-delay=".25s" style="color: #718096;">
+          Currently working on application security, IAM systems, and security tooling that developers actually want to use. I've built tools for rapid prototyping and production systems handling millions of requests.
+        </p>
+        <div class="mt-4 wow animated slideInUp" data-wow-delay=".3s">
+          <a href="/projects/" class="btn btn-primary btn-lg mr-2 mb-2" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: none;">View My Work</a>
+          <a href="/about/" class="btn btn-outline-dark btn-lg mb-2">Learn More</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- What I Do Section -->
+<div class="row justify-content-center py-5" style="background: linear-gradient(180deg, transparent 0%, rgba(102,126,234,0.03) 100%);">
+  <div class="col-lg-10 col-md-11">
+    <h4 class="text-center mb-4 wow animated fadeIn" style="color: #2d3748;">What I Build</h4>
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 border-0 shadow-sm wow animated fadeInUp" data-wow-delay=".1s" style="border-radius: 12px;">
+          <div class="card-body p-4">
+            <div class="mb-3" style="font-size: 2rem; color: #667eea;"><i class="fas fa-shield-alt"></i></div>
+            <h5 class="card-title font-weight-bold">Application Security</h5>
+            <p class="card-text text-muted">Designing secure architectures and integrating security into CI/CD pipelines. Making "shift left" actually work in practice.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 border-0 shadow-sm wow animated fadeInUp" data-wow-delay=".2s" style="border-radius: 12px;">
+          <div class="card-body p-4">
+            <div class="mb-3" style="font-size: 2rem; color: #667eea;"><i class="fas fa-tools"></i></div>
+            <h5 class="card-title font-weight-bold">Security Tooling</h5>
+            <p class="card-text text-muted">Building tools that developers actually want to use. From quick prototypes to production systems at scale.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 border-0 shadow-sm wow animated fadeInUp" data-wow-delay=".3s" style="border-radius: 12px;">
+          <div class="card-body p-4">
+            <div class="mb-3" style="font-size: 2rem; color: #667eea;"><i class="fas fa-key"></i></div>
+            <h5 class="card-title font-weight-bold">IAM & Access Control</h5>
+            <p class="card-text text-muted">Designing identity systems and access policies that balance security with usability.</p>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
+</div>
 
-    <p class="text-muted wow animated slideInUp" data-wow-delay=".15s">{{ site.description }}</p>
+<!-- Featured Projects Preview -->
+<div class="row justify-content-center py-5">
+  <div class="col-lg-10 col-md-11">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h4 class="mb-0 wow animated fadeIn" style="color: #2d3748;">Featured Projects</h4>
+      <a href="/projects/" class="btn btn-sm btn-outline-primary">View All</a>
+    </div>
+    <div class="row">
+      {% for project in site.projects limit:2 %}
+      <div class="col-md-6 mb-4">
+        <div class="card h-100 border-0 shadow-sm wow animated fadeInUp" data-wow-delay="{{ forloop.index | times: 0.1 }}s" style="border-radius: 12px; overflow: hidden;">
+          {% if project.image %}
+          <img src="{{ project.image }}" class="card-img-top" alt="{{ project.name }}" style="height: 200px; object-fit: cover;">
+          {% endif %}
+          <div class="card-body p-4">
+            <h5 class="card-title font-weight-bold">{{ project.name }}</h5>
+            <p class="card-text text-muted">{{ project.description | truncate: 120 }}</p>
+            <a href="{{ project.url }}" class="btn btn-sm btn-outline-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
 
+<!-- Personal Touch -->
+<div class="row justify-content-center py-4 mb-4">
+  <div class="col-lg-8 col-md-10 text-center">
+    <div class="p-4 wow animated fadeIn" style="background: linear-gradient(135deg, rgba(102,126,234,0.1) 0%, rgba(118,75,162,0.1) 100%); border-radius: 16px;">
+      <p class="mb-2" style="font-size: 1.1rem; color: #4a5568;">
+        <i class="fas fa-chess-knight mr-2" style="color: #667eea;"></i>
+        When I'm not breaking (or securing) things, you'll find me playing blitz chess.
+      </p>
+      <p class="mb-0 text-muted">
+        Currently rated ~2100 on Chess.com. <a href="{{ site.author.chess }}" target="_blank" style="color: #667eea;">Challenge me to a game</a> if you dare.
+      </p>
+    </div>
   </div>
 </div>
