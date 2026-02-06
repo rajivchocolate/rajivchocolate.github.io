@@ -12,7 +12,7 @@ A secure LLM inference API built in Go to explore how AI labs protect their mode
 
 ## Security Controls
 
-- **Risk Scorer**: Scores each request 0-100 based on threat signals
+- **Risk Scorer**: Scores each request from 0 to 100 based on threat signals
 - **Extraction Detector**: Catches attempts to steal the model through systematic queries
 - **Tenant Isolator**: Keeps each user's conversation context separate
 - **Model Verifier**: Detects if model files have been tampered with

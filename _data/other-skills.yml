@@ -2,6 +2,10 @@
   percentage: 85
   color: secondary
 
-- name: Chess
-  percentage: 80
-  color: dark
+- name: Python
+  percentage: 85
+  color: info
+
+- name: Go
+  percentage: 75
+  color: primary
